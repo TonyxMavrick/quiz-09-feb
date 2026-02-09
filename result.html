@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Results - Online Quiz</title>
+  <meta name="description" content="View your quiz results and score. See how well you performed and try again to improve.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="">
+  <header id="header"></header>
+  
+  <main style="min-height: 100vh;">
+    <div class="gradient-bg" style="min-height: 100vh; padding: 3rem 0;">
+      <div class="container result-container" style="max-width: 56rem;">
+        <!-- Performance Card -->
+        <div class="performance-card">
+          <div id="performance-icon" class="performance-icon"></div>
+          
+          <h1 id="performance-title" class="performance-title"></h1>
+          <p id="performance-message" class="performance-message"></p>
+          
+          <div class="score-display">
+            <div id="score-percentage" class="score-value"></div>
+            <p class="score-label">Your Score</p>
+          </div>
+        </div>
+        
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-card" style="animation-delay: 0.3s;">
+            <div class="stat-content">
+              <div class="stat-icon gradient-blue-purple">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+              </div>
+              <div>
+                <p id="total-questions" class="stat-value"></p>
+                <p class="stat-label">Total Questions</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="stat-card" style="animation-delay: 0.4s;">
+            <div class="stat-content">
+              <div class="stat-icon" style="background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              </div>
+              <div>
+                <p id="correct-answers" class="stat-value"></p>
+                <p class="stat-label">Correct</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="stat-card" style="animation-delay: 0.5s;">
+            <div class="stat-content">
+              <div class="stat-icon" style="background: linear-gradient(135deg, #ef4444 0%, #f43f5e 100%);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+              </div>
+              <div>
+                <p id="incorrect-answers" class="stat-value"></p>
+                <p class="stat-label">Incorrect</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Actions Card -->
+        <div class="actions-card">
+          <h2 class="actions-title">What's Next?</h2>
+          <div class="actions-grid">
+            <a id="retry-btn" href="#" class="btn" style="background: linear-gradient(135deg, #2563eb 0%, #9333ea 100%); color: white;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+              Retry Quiz
+            </a>
+            
+            <a href="index.html" class="btn" style="background: linear-gradient(135deg, #22c55e 0%, #10b981 100%); color: white;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              Home
+            </a>
+            
+            <a href="index.html#categories" class="btn" style="background: linear-gradient(135deg, #f97316 0%, #ef4444 100%); color: white;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>
+              More Quizzes
+            </a>
+            
+            <button id="share-btn" class="btn" style="background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%); color: white;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              Share Score
+            </button>
+          </div>
+        </div>
+        
+        <!-- Quiz Summary -->
+        <div class="summary-card">
+          <h2 class="summary-title">Quiz Summary</h2>
+          <div id="summary-list" class="summary-list"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer id="footer"></footer>
+  
+  <script src="quiz-data.js"></script>
+  <script src="common.js"></script>
+  <script src="result.js"></script>
+</body>
+</html>

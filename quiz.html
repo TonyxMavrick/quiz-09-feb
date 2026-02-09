@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Online Quiz</title>
+  <meta name="description" content="Take the quiz and test your knowledge. Answer questions and see your results instantly.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="">
+  <header id="header"></header>
+  
+  <main style="min-height: 100vh;">
+    <div class="gradient-bg" style="min-height: 100vh; padding: 2rem 0;">
+      <div class="container" style="max-width: 56rem;">
+        <!-- Quiz Header -->
+        <div class="quiz-header-card">
+          <div class="quiz-header-top">
+            <div>
+              <h1 id="quiz-title" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem; color: var(--color-gray-900);"></h1>
+              <p id="quiz-progress" style="color: var(--color-gray-600);"></p>
+            </div>
+            <div class="quiz-timer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span id="timer" class="quiz-timer-value"></span>
+            </div>
+          </div>
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-bar-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+        
+        <!-- Question Card -->
+        <div class="question-card">
+          <h2 id="question-text" class="question-text"></h2>
+          
+          <div id="answers-container" class="answers-list"></div>
+          
+          <!-- Explanation (hidden by default) -->
+          <div id="explanation" class="explanation-box hidden">
+            <p class="explanation-title">Explanation:</p>
+            <p id="explanation-text" class="explanation-text"></p>
+          </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="quiz-navigation">
+          <button id="prev-btn" class="btn" style="background: white; color: var(--color-gray-700); border: 2px solid var(--color-gray-200);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Previous
+          </button>
+          
+          <button id="next-btn" class="btn btn-primary" disabled>
+            <span id="next-btn-text">Next</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer id="footer"></footer>
+  
+  <script src="quiz-data.js"></script>
+  <script src="common.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>
